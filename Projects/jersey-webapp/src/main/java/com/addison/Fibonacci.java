@@ -22,9 +22,10 @@ public class Fibonacci {
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String fibonacci(@QueryParam("num") String number) {
-        StringBuilder series = new StringBuilder("Fibonacci " + number);
         try {
             long n = Long.parseLong(number);
+            StringBuilder series = new StringBuilder("Fibonacci ");
+            series.append(number);
             series.append(" : 0");
 
             if (n > 1)
