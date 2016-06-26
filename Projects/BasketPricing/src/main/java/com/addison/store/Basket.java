@@ -8,14 +8,14 @@ import java.util.List;
  * Created by Mark on 26/06/2016.
  */
 public class Basket implements BasketService {
-    public List<Item> cart = new ArrayList<>();
+    public List<Item> basket = new ArrayList<>();
 
     public void addItem(String name, int quantity) {
-        cart.add(new Item(name, quantity));
+        basket.add(new Item(name, quantity));
     }
 
 
     public BigDecimal totalPrice() {
-        return cart.stream().map(item -> Prices.getPrice(item.name).multiply(new java.math.BigDecimal(item.quantity))).reduce(java.math.BigDecimal.ZERO, java.math.BigDecimal::add);
+        return basket.stream().map(item -> Prices.getPrice(item.name).multiply(new java.math.BigDecimal(item.quantity))).reduce(java.math.BigDecimal.ZERO, java.math.BigDecimal::add);
     }
 }
