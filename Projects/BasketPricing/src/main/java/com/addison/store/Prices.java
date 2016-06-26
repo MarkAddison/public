@@ -20,6 +20,6 @@ public class Prices {
     }
 
     public void setPrices(Map<String, BigDecimal> prices) {
-        com.addison.store.Prices.prices = prices;
+        Prices.prices = prices;
     }
 }

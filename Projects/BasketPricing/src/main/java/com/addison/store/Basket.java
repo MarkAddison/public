@@ -16,6 +16,6 @@ public class Basket implements BasketService {
 
 
     public BigDecimal totalPrice() {
-        return basket.stream().map(item -> Prices.getPrice(item.name).multiply(new java.math.BigDecimal(item.quantity))).reduce(java.math.BigDecimal.ZERO, java.math.BigDecimal::add);
+        return basket.stream().map(item -> Prices.getPrice(item.name).multiply(new BigDecimal(item.quantity))).reduce(BigDecimal.ZERO, BigDecimal::add);
     }
 }

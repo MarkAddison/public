@@ -7,6 +7,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.math.BigDecimal;
+import java.util.AbstractMap;
 import java.util.Collections;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -29,11 +30,11 @@ public class BasketTest {
 
     private Map<String, BigDecimal> testPrices() {
         return Collections.unmodifiableMap(Stream.of(
-                new java.util.AbstractMap.SimpleEntry<>("Apple", BigDecimal.valueOf(0.23)),
-                new java.util.AbstractMap.SimpleEntry<>("Banana", BigDecimal.valueOf(0.10)),
-                new java.util.AbstractMap.SimpleEntry<>("Lemon", BigDecimal.valueOf(0.35)),
-                new java.util.AbstractMap.SimpleEntry<>("Orange", BigDecimal.valueOf(0.16)),
-                new java.util.AbstractMap.SimpleEntry<>("Peach", BigDecimal.valueOf(0.45)))
+                new AbstractMap.SimpleEntry<>("Apple", BigDecimal.valueOf(0.23)),
+                new AbstractMap.SimpleEntry<>("Banana", BigDecimal.valueOf(0.10)),
+                new AbstractMap.SimpleEntry<>("Lemon", BigDecimal.valueOf(0.35)),
+                new AbstractMap.SimpleEntry<>("Orange", BigDecimal.valueOf(0.16)),
+                new AbstractMap.SimpleEntry<>("Peach", BigDecimal.valueOf(0.45)))
                 .collect(Collectors.toMap((e) -> e.getKey(), (e) -> e.getValue())));
     }
 
