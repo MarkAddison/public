@@ -51,6 +51,11 @@ public class BasketTest {
     }
 
     @Test
+    public void PriceEmptyBasket() {
+        assertEquals(0, theBasket.totalPrice().compareTo(BigDecimal.valueOf(0.0)));
+    }
+
+    @Test
     public void PriceBasketOfBananas() {
         theBasket.addItem("Banana", 2);
         theBasket.addItem("Banana", 2);
